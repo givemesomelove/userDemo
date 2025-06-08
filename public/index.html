@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理系统</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>功能菜单</h2>
+            <ul>
+                <li><a href="#" onclick="loadPage('/login/login.html')">登录页</a></li>
+                <li><a href="#" onclick="loadPage('query.html')">查询页</a></li>
+                <li><a href="#" onclick="loadPage('report.html')">报表页</a></li>
+            </ul>
+        </div>
+        <div class="main-content" id="content-area">
+            <!-- 动态加载的内容将显示在这里 -->
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+</html>
