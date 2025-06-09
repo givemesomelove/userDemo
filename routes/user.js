@@ -8,8 +8,8 @@ router.post('/register', async(req, res) => {
     try {
         /// 判空
         const { username, password } = req.body;
-        const userId = userService.registerUser(username, password);
-        res.status(201).json({ userId });
+        const userId = await userService.registerUser(username, password);
+        res.status(201).json({ userId: userId });
     } catch (err) {
         res.status(400).json({ error: err.message });
     }

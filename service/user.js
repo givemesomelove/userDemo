@@ -9,7 +9,7 @@ class User {
     /// 注册用户
     async registerUser(username, password) {
         /// 检查用户名、密码是否为空
-        if (isStrValid(username) || isStrValid(password)) throw new Error('用户名不能为空');
+        if (!isStrValid(username) || !isStrValid(password)) throw new Error('用户名不能为空');
 
         /// 密码转成哈希密码
         password = await hashPassword(password);
@@ -38,8 +38,6 @@ class User {
         const token = createToken(user._id);
         return token;
     }
-
-
 }
 
 module.exports = new User();

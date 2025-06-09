@@ -37,6 +37,9 @@ class Db {
             /// 初始化模型
             await this.initModels();
 
+            /// 发送数据库连接成功的全局通知
+            
+
             return this.db;
         } catch (err) {
             console.error("数据库连接失败:", err);
