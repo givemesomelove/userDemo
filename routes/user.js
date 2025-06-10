@@ -20,7 +20,7 @@ router.post('/login', async(req, res) => {
     try {
         const { username, password } = req.body;
         /// 登录
-        const token = userService.loginUser(username, password);
+        const token = await userService.loginUser(username, password);
         res.status(201).json({ token });
     } catch (err) {
         res.status(400).json({ error: err.message });

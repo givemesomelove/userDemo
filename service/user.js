@@ -25,10 +25,10 @@ class User {
     /// 用户登录
     async loginUser(username, password) {
         /// 检查用户名、密码是否为空
-        if (isStrValid(username) || isStrValid(password)) throw new Error('用户名或密码不能为空');
+        if (!isStrValid(username) || !isStrValid(password)) throw new Error('用户名或密码不能为空');
 
         /// 查询用户密码
-        const user = this.userDb.getUserByUsername(username);
+        const user = await this.userDb.getUserByUsername(username);
         
         /// 验证密码
         const isMatch = await bcrypt.compare(password, user.password);
